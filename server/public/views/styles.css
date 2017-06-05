@@ -1,0 +1,16 @@
+.lines{
+  font-family: 'Rock Salt', cursive;
+  color:black;
+  /*margin: 2em;*/
+  text-align: center;
+  background-image: url(https://s-media-cache-ak0.pinimg.com/736x/7b/bd/7a/7bbd7a480e168c300cb203ab5a736bd5.jpg);
+  background-size: cover;
+}
+.container{
+  text-align: center;
+}
+
+body{
+  background-image: url(https://s-media-cache-ak0.pinimg.com/736x/7b/bd/7a/7bbd7a480e168c300cb203ab5a736bd5.jpg);
+  background-size: cover;
+}

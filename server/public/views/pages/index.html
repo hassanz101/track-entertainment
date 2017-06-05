@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="vendors/bootstrap.less">
+  <link rel="stylesheet" href="vendors/bootstrap.min.css">
+  <link rel="stylesheet" href="views/styles.css">
+<link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+  <!-- scripts -->
+  <script src="/vendors/angular.min.js" charset="utf-8"></script>
+  <script src="/vendors/angular-route.min.js"></script>
+  <script src="/assets/scripts/client.js" type="text/javascript"></script>
+  <!-- controllers -->
+  <script src="/assets/scripts/controllers/logincontroller.js"></script>
+  <script src="/assets/scripts/controllers/usercontroller.js"></script>
+  <script src="/assets/scripts/controllers/mustwatchcontroller.js"></script>
+<!-- services -->
+<script src="/assets/scripts/services/tmdbservice.js" type="text/javascript"></script>
+<script src="/assets/scripts/services/mustwatchservice.js" type="text/javascript"></script>
+  <base href="/" />
+  <title></title>
+</head>
+<body>
+<main ng-view></main>
+</body>
+</html>

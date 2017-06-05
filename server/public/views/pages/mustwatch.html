@@ -1,0 +1,12 @@
+<!-- must watch service -->
+<div class="container">
+  <button class="btn btn-primary" ng-click='mw.getAllMedia()'>Search</button>
+  <input type="text" placeholder="search from Movies or Tv shows" ng-model="mw.searchbox" />
+  <div ng-repeat="search in mw.mediaList" class="col-sm-2">
+    <div class="row">
+      <h4>{{search.title}}</h4>
+      <p>{{search.media_type}}</p>
+      <p>{{search.overview}}</p>
+    </div>
+  </div>
+</div>
