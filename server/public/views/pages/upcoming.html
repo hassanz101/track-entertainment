@@ -1,1 +1,13 @@
-
+<!-- upcoming service -->
+<div ng-controller="TrackupcomingController as tu">
+    <!-- track list repeat -->
+  <div ng-repeat="search in mw.trackList" class="col-sm-2">
+    <div class="row">
+      <h4>{{search.title}}</h4>
+      <h4>{{search.name}}</h4>
+      <p>{{search.media_type}}</p>
+      <p>{{search.overview}}</p>
+  <!-- track list repeat -->
+</div>
+</div>
+</div>

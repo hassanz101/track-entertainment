@@ -1,16 +1,91 @@
 .lines{
-  font-family: 'Rock Salt', cursive;
-  color:black;
-  /*margin: 2em;*/
+  font-family: 'Patrick Hand SC', cursive;
+  /*border: #e3e3e3;*/
+  /*border-top-width: 2px;
+  border-bottom-width: 2px;
+  padding-top: 25px;
+  padding-bottom: 25px;*/
+  background: rgba(255, 255, 255, 0.5);
+  /*position: relative;*/
   text-align: center;
-  background-image: url(https://s-media-cache-ak0.pinimg.com/736x/7b/bd/7a/7bbd7a480e168c300cb203ab5a736bd5.jpg);
-  background-size: cover;
 }
-.container{
+.container {
   text-align: center;
+  color:black;
+}
+/*.box {
+  height:510px;
+    padding: 5px 7% 0;
+    text-align: center;
+    position: relative;
+    background: rgb(141, 66, 57);
+}
+.row {
+  height: inherit;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background: rgb(230, 220, 208);
+}*/
+
+.inputText {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: rgb(230, 220, 208);
+    box-shadow: 1px 1px 1px 1px #ccc;
+    width: 230px;
+    height: 30px;
+    font-family: 'Patrick Hand SC', cursive;
+
+}
+/*.icon-fixed-width {
+  color: black;
+}*/
+button {
+  position:relat;
+  font-family: 'Patrick Hand SC', cursive;
+
+}
+body {
+  background-image: url(https://cdn.pixabay.com/photo/2015/09/05/23/02/notepad-926046_960_720.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: absolute;
 }
 
-body{
-  background-image: url(https://s-media-cache-ak0.pinimg.com/736x/7b/bd/7a/7bbd7a480e168c300cb203ab5a736bd5.jpg);
-  background-size: cover;
+/*matching js style*/
+/*@media only screen and (max-width : 767px) {
+  .box {
+    height: auto !important;
+  }
+}*/
+
+
+
+/* Base Stuff Ignore */
+/*.container { padding-top: 25px; padding-bottom: 25px; background: rgba(255, 255, 255, 0.1); }
+.row { padding-top: 25px; padding-bottom: 25px; background: rgba(255, 255, 255, 0.3); }
+[class*="col-"] { border: solid 1px #e3e3e3; border-top-width: 2px; border-bottom-width: 2px; padding-top: 25px; padding-bottom: 25px; background: rgba(255, 255, 255, 0.5); }*/
+/*[class*="col-"]:first-child { border-left-width: 2px; }
+[class*="col-"]:last-child { border-right-width: 2px; }*/
+
+
+/*.box {
+    padding: 25px 7% 0;
+    text-align: center;
+    position: relative;
+    background: #fff;
 }
+.box h2 {
+    font-weight: 300;
+    letter-spacing: -0.05em;
+    margin-bottom: 15px;
+}
+
+.box p {
+    font-size: 16px;
+    font-weight: 300;
+    opacity: 0.8;
+    padding-bottom: 125px;
+}*/
+/*matching js end*/

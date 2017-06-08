@@ -1,7 +1,6 @@
-
-<div class="container">
+<div class="content">
   <h1 class="lead">Login</h1>
-    <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">{{lc.message}}</h2>
+  <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">{{lc.message}}</h2>
     <form ng-submit="lc.login()">
       <div>
           <label for="username">Username:</label>
@@ -16,4 +15,22 @@
           <a href="/register">Register</a>
       </div>
     </form>
+</div>
+
+<!-- new login form style -->
+<div class="content">
+  <div class="form-wrapper">
+    <div class="linker">
+      <span class="ring"></span>
+      <span class="ring"></span>
+      <span class="ring"></span>
+      <span class="ring"></span>
+      <span class="ring"></span>
+    </div>
+    <form class="lead" action="#" method="post">
+      <input type="text" name="username" placeholder="username" />
+      <input type="password" name="password" placeholder="password" />
+      <button type="submit">Log in</button>
+    </form>
+  </div>
 </div>

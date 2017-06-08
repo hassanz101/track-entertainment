@@ -1,19 +1,44 @@
+<ul class="nav nav-list">
+<li class="active"><a href="/userHome"><i class="icon-fixed-width fa fa-search"></i> Search here</a></li>
+<li><a href="/mustwatch"><i class="icon-fixed-width fa fa-heart-o"></i> Must watch</a></li>
+<li><a href="/trackupcoming"><i class="icon-fixed-width fa fa-globe"></i> Track upcoming</a></li>
+</ul>
 <div class="lines">
-    <h1 id="welcome" class="lead">Welcome, {{uc.userName}}!</h1>
-    <p>Keep track of all your media updates!</p>
-    <button class="btn btn-default" ng-click="uc.logout()">Log Out</button>
-    </div>
+<h1 id="welcome" class="lead">Welcome, {{uc.userName}}!</h1>
+<p>Keep track of all your media updates!</p>
+<button class="btn btn-default" ng-click="uc.logout()">Log Out</button>
+</div>
 <!-- the movie database search  -->
 <div class="container">
-<input type="text" placeholder="Movies or Tv Shows" ng-model="uc.searchbox"/>
-<button type="button" ng-click="uc.getAllMedia()">Search here</button>
-<div ng-repeat="search in uc.mediaList" class="col-sm-2 col-md-2">
-   <div class="row">
-      <h4>{{search.title}}</h4>
-      <p>{{search.media_type}}</p>
-      <p>{{search.overview}}</p>
+  <input type="text" ng-model="uc.searchbox" class="inputText" placeholder="Movies or Tv Shows">
+  <button class="btn btn-default" ng-click="uc.getAllMedia()">Search here</button>
+
+  <div ng-repeat="search in uc.mediaList">
+    <!-- <h4> {{search.title}}</h4>
+          <h4> {{search.name}}</h4>
+          <h5>Release Date:</h5>
+          <p>{{search.release_date}}{{search.first_air_date}}</p>
+          <h5>Type:</h5><p>{{search.media_type}}</p> -->
+    <h4> {{search.title}}</h4>
+    <h4> {{search.name}}</h4>
+    <p>{{search.release_date}}{{search.first_air_date}}</p>
+
+
+    <!-- angular collapse -->
+    <a ng-model="collapsed" ng-click="collapsed=!collapsed"><strong>Overview</strong></a>
+    <div ng-show="collapsed">{{search.overview}}</div>
+    <!-- angular collapse end -->
+    <!-- must watch controller start -->
+    <div ng-controller="MustwatchController as mw">
+      <!-- must watch button -->
+      <li><a ng-click='mw.postAllMustWatch(search.title, search.name, search.release_date, search.first_air_date, search.media_type, search.overview)'><i class="icon-fixed-width fa fa-heart-o"></i></a></li>
+
+      <!-- <button class="btn btn-default" ng-click='mw.postAllMustWatch(search.title, search.name, search.release_date, search.media_type, search.overview)'>Add to Must Watch</button> -->
     </div>
-    <!-- must watch button -->
-    <button class="btn btn-primary" ng-click='uc.postAllMustWatch()'>Must Watch</button>
-    </div>
-    </div>
+    <!-- must watch controller end -->
+    <!-- <div ng-controller="TrackupcomingController as tu"> -->
+    <!-- upcoming tracker button -->
+    <!-- <button class="btn btn-default" ng-click='uc.postAllUpcoming(search.title, search.media_type, search.overview)'>Track upcoming media</button> -->
+
+  </div>
+</div>

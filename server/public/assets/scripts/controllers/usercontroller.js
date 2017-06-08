@@ -1,4 +1,4 @@
-myApp.controller('UserController', function(tmdbservice, mustwatchservice, $http, $location) {
+myApp.controller('UserController', function(tmdbservice, mustwatchservice, trackupcomingService, $http, $location) {
   // This happens after view/controller loads
   var vm = this;
 

@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ngRoute']); //"ui.bootstrap"
 
 /// Routes ///
 myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
@@ -22,10 +22,10 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
       templateUrl:'/views/pages/mustwatch.html',
       controller: "MustwatchController as mw"
     })
-    // .when('/upcoming', {
-    //   templateUrl:'/views/pages/upcoming.html',
-    //   controller:"UpcomingController as tu"
-    // })
+    .when('/trackupcoming', {
+      templateUrl:'/views/pages/upcoming.html',
+      controller:"TrackupcomingController as tu"
+    })
     .otherwise({
       redirectTo: 'home'
     });
