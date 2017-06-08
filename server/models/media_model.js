@@ -4,10 +4,10 @@ var Schema = mongoose.Schema;
 
 var mediaSchema = new Schema({
     userid: {type: String, required: true},
-    title: {type: String, required: true},
-    name:  {type:String, required: true},
-    release_date: {type:Date, required: true},
-    first_air_date: {type:Date, required: true},
+    title: {type: String},
+    name:  {type:String},
+    release_date: {type:Date},
+    first_air_date: {type:Date},
     media_type: {type: String, required: true},
     overview: {type: String, required: true}
 });

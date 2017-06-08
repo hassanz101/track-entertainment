@@ -1,18 +1,13 @@
 .lines{
   font-family: 'Patrick Hand SC', cursive;
-  /*border: #e3e3e3;*/
-  /*border-top-width: 2px;
-  border-bottom-width: 2px;
-  padding-top: 25px;
-  padding-bottom: 25px;*/
-  background: rgba(255, 255, 255, 0.5);
-  /*position: relative;*/
+color:white;
   text-align: center;
 }
 .container {
   text-align: center;
-  color:black;
+  color:white;
 }
+
 /*.box {
   height:510px;
     padding: 5px 7% 0;
@@ -43,11 +38,18 @@
 button {
   position:relat;
   font-family: 'Patrick Hand SC', cursive;
-
 }
+
+.btn-outline {
+    background-color: transparent;
+    color: inherit;
+    transition: all .5s;
+}
+
+
 body {
-  background-image: url(https://cdn.pixabay.com/photo/2015/09/05/23/02/notepad-926046_960_720.jpg);
-  background-size: cover;
+  background-image: url(http://static.simpledesktops.com/uploads/desktops/2012/02/02/Bombillos.png);
+  background-size:cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   position: absolute;

@@ -7,8 +7,8 @@ var path = require('path');
 
 router.get('/', function(req, res) {
   console.log('getting to must watch route', req.body);
-  console.log('req.body.user = req.body.passport.user', req.body.user = req.body.passport.user);
-  media.find(req.body, function(err, data) {
+  // console.log('req.body.user = req.body.passport.user', req.body.user = req.body.passport.user);
+  media.find(function(err, data) {
     if (err) {
       console.log(err);
       res.sendStatus(500);
@@ -38,7 +38,6 @@ router.post('/', function(req, res) {
   entertainToSend.name = req.body.name;
   entertainToSend.release_date = req.body.release_date;
   entertainToSend.media_type = req.body.media_type;
-
   entertainToSend.first_air_date = req.body.first_air_date;
   entertainToSend.overview = req.body.overview;
   entertainToSend.save(function(err, response) {

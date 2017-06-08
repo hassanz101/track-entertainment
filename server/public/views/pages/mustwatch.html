@@ -1,16 +1,19 @@
 <!-- must watch service -->
-<div ng-init="mw.getAllMustWatch(search.title, search.name, search.release_date, search.first_air_date, search.media_type, search.overview)">
-
-</div>
-    <div ng-controller="MustwatchController as mw">
+<ul class="list-group">
+<li class="active"><a href="/userHome"><i class="icon-fixed-width fa fa-search"></i> Search here</a></li>
+<li><a href="/trackupcoming"><i class="icon-fixed-width fa fa-globe"></i> Track upcoming</a></li>
+</ul>
+<div class="container">
+    <div ng-controller="MustwatchController as mw" ng-init="mw.getAllMustWatch()">
       <div ng-repeat="search in mw.watchList" class="col-sm-2">
         <div class="row">
-          <h4>{{search.title}}</h4> Title:
-          <h4>{{search.name}}</h4> Name:
-          <p>{{search.release_date}}</p> Release Date:
-          <p>{{search.media_type}}</p> Media Type:
-          <p>{{search.overview}}</p> Overview:
+          <h4>Title: {{search.title}}</h4>
+          <h4> {{search.name}}</h4>
+          <h5>Release Date:</h5>
+          <p>{{search.release_date}}{{search.first_air_date}}</p>
+          <p>{{search.media_type}}</p>
       <!-- must watch repeat -->
     </div>
   </div>
+</div>
 </div>
