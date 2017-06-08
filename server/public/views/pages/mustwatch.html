@@ -12,7 +12,10 @@
           <h5>Release Date:</h5>
           <p>{{search.release_date}}{{search.first_air_date}}</p>
           <p>{{search.media_type}}</p>
-      <!-- must watch repeat -->
+          <!-- angular collapse -->
+          <a ng-model="collapsed" ng-click="collapsed=!collapsed"><strong>Overview</strong></a>
+          <div ng-show="collapsed">{{search.overview}}</div>
+          <!-- angular collapse end -->
     </div>
   </div>
 </div>

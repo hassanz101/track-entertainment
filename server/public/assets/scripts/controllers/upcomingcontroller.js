@@ -2,9 +2,22 @@ myApp.controller('TrackupcomingController', function(tmdbservice, trackupcomingS
 
  var vm = this;
  vm.trackList = [];
- vm.postAllUpcoming = function(title, name, media_type, overview){
-   trackupcomingService.postUpcoming(title, name, media_type, overview).then(function(response){
+
+ $http.get('/user').then(function(response){
+   vm.userInfo = response.data._id;
+ });
+
+ vm.postAllUpcoming = function(title, name, release_date, first_air_date, media_type, overview){
+   trackupcomingService.postUpcoming(vm.userInfo,title, name, release_date, first_air_date, media_type, overview).then(function(response){
      vm.trackList = response;
  }); //end trackupcomingService
 };//end postAllUpcoming
+
+vm.getAllUpcoming = function(){
+  trackupcomingService.getUpcoming().then(function(response){
+    console.log("getAllUpcoming", response);
+    vm.trackList = response;
+  });
+};
+
 });//end controller

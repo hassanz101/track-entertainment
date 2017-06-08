@@ -29,12 +29,11 @@
     <div ng-controller="MustwatchController as mw">
       <!-- must watch button -->
       <li><a ng-click='mw.postAllMustWatch(search.title, search.name, search.release_date, search.first_air_date, search.media_type, search.overview)'><i class="icon-fixed-width fa fa-heart-o"></i></a></li>
-
     </div>
     <!-- must watch controller end -->
-    <!-- <div ng-controller="TrackupcomingController as tu"> -->
-    <!-- upcoming tracker button -->
-    <!-- <button class="btn btn-default" ng-click='uc.postAllUpcoming(search.title, search.media_type, search.overview)'>Track upcoming media</button> -->
 
+     <div ng-controller="TrackupcomingController as tu">
+    <!-- upcoming tracker button -->
+    <li><a ng-click='tu.postAllUpcoming(search.title, search.name, search.release_date, search.first_air_date, search.media_type, search.overview)'><i class="icon-fixed-width fa fa-globe"></i></a></li>
   </div>
 </div>

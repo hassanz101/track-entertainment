@@ -1,24 +1,27 @@
 myApp.service('trackupcomingService', function($http, $location) {
-  var vm = this;
   console.log('in trackupcoming service');
+  var vm = this;
 
   //get call for trackupcoming
   this.getUpcoming = function() {
     console.log('In GET Upcoming');
-    $http({
+    return $http({
       method: 'GET',
       url: '/trackupcoming'
-    }).then(function(response) {
-      this.trackList = response.data.results;
+    }).then(function success(response) {
+    return response.data;
     }); //end then
   }; //end getUpcoming
 
   //post call to add to trackupcoming
-  this.postUpcoming = function(title, name, media_type, overview) {
+  this.postUpcoming = function(user_id, title, name, release_date, first_air_date, media_type, overview) {
     console.log('In POST Upcoming');
     var upcomingToSend = {
+      userid :user_id,
       title: title,
       name: name,
+      release_date: release_date,
+      first_air_date: first_air_date,
       media_type: media_type,
       overview: overview
     }; //end upcomingToSend

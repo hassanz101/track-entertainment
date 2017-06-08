@@ -18,7 +18,7 @@
        console.log("must watch GET RESPONSE",response);
        vm.watchList = response;
        console.log("vm watchlist LOG", vm.watchList );
-     }); //end tmdbservice
+     }); //end mustwatchservice
    }; //end getAllMustWatch
 
  }); //end controller

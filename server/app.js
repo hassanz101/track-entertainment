@@ -7,6 +7,8 @@ var mongoose = require('mongoose');
 var passport = require('./strategies/user.strategy');
 var session = require('express-session');
 var media = require( '../server/models/media_model');
+var upcomingmedia = require( '../server/models/upcoming_model');
+
 
 
 // Route includes
@@ -14,6 +16,7 @@ var index = require('./routes/index');
 var user = require('./routes/user');
 var register = require('./routes/register');
 var mustwatch = require( './routes/mustwatch' );
+var upcoming = require( './routes/upcoming' );
 
 
 // body parser/middleware
@@ -41,6 +44,7 @@ app.use(passport.session());
 app.use('/register', register);
 app.use('/user', user);
 app.use( '/mustwatch', mustwatch );
+app.use('/trackupcoming', upcoming);
 app.use('/*', index);
 
 
