@@ -40,7 +40,7 @@ myApp.service('mustwatchservice', function($http, $location) {
   }; //end postWatch
 
   this.deleteWatch = function(user_id) {
-   console.log('this is the Upcoming DELETE');
+   console.log('this is the must watch DELETE');
   return $http({
      method: 'DELETE',
      url: '/mustwatch/' + user_id

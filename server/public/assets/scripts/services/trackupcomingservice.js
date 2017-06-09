@@ -36,16 +36,14 @@ myApp.service('trackupcomingService', function($http, $location) {
     }); //end then
   }; //end postUpcoming
 
-  this.deleteUpcoming = function(user_id, title, name, release_date, first_air_date, media_type, overview, poster_path) {
+  this.deleteUpcoming = function(user_id) {
    console.log('this is the Upcoming DELETE');
   return $http({
      method: 'DELETE',
-     url: '/trackupcoming',
-     params: { userid :user_id }
+     url: '/trackupcoming/' + user_id
    }).then(function(response) {
      console.log(response);
      return response;
    });
  };
- this.getUpcoming();
 }); //end trackupcoming service

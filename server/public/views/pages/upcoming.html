@@ -24,7 +24,7 @@
     <a ng-model="collapsed" ng-click="collapsed=!collapsed"><strong>Overview</strong></a>
     <div ng-show="collapsed">{{search.overview}}</div>
     <!-- angular collapse end -->
-<li><a ng-click='tu.deleteAllUpcoming(search.title, search.name, search.release_date, search.first_air_date, search.media_type, search.overview)'><i class="icon-fixed-width fa fa-trash-o"></i></a></li>
+<li><a ng-click='tu.deleteAllUpcoming(search._id)'><i class="icon-fixed-width fa fa-trash-o"></i></a></li>
 </div>
   </div>
 </div>

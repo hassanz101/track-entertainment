@@ -38,16 +38,16 @@ router.post('/', function (req, res){
 }); //end router.post
 
 //start delete router
-router.delete('/', function (req, res){
+router.delete('/:id', function (req, res){
   console.log('in delete route');
-  var upcomingToDelete = req.query._id;
-  upcomingToDelete.remove({ _id : upcomingToDelete },function(err){
+  var upcomingToDelete = req.params.id;
+  upcomingmedia.remove({ _id : upcomingToDelete },function(err){
     if (err) {
       console.log( ' didnt delete theres a problem', err );
       res.sendStatus( 500 );
     }
     else {
-      console.log( 'now its deleting', response );
+      // console.log( 'now its deleting', response );
       res.sendStatus(201);
     }//end else
 

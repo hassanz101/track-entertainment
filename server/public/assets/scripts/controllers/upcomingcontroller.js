@@ -21,10 +21,9 @@ vm.getAllUpcoming = function(){
   });
 }; //end getAllUpcoming
 
-vm.deleteAllUpcoming = function(user_id, title, name, release_date, first_air_date, media_type, overview, poster_path){
-  trackupcomingService.deleteUpcoming(user_id, title, name, release_date, first_air_date, media_type, overview, poster_path).then(function(response){
-    console.log("deleteAllUpcoming", response);
-    vm.trackList = response;
+vm.deleteAllUpcoming = function(id){
+  trackupcomingService.deleteUpcoming(id).then(function(response){
+    vm.getAllUpcoming();
   });
 };
 });//end controller
