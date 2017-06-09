@@ -11,29 +11,37 @@
 </div>
 <!-- the movie database search  -->
 <div class="container">
+  <div class="row">
   <input type="text" ng-model="uc.searchbox" class="inputText" placeholder="Movies or Tv Shows">
   <button class="btn btn-default" ng-click="uc.getAllMedia()">Search here</button>
-
-  <div ng-repeat="search in uc.mediaList">
+</div>
+</div>
+<div class="row">
+  <div ng-repeat="search in uc.mediaList" class="col-md-3 divsize">
+<!-- <div ng-if="$index % 3 ===0" class="row"> -->
+    <div>
     <h4> {{search.title}}</h4>
     <h4> {{search.name}}</h4>
-    <h5>Release Date:</h5>
-    <p>{{search.release_date}}{{search.first_air_date}}</p>
+    <h5>Release Date:</h5><p>{{search.release_date}}{{search.first_air_date}}</p>
     <p>{{search.media_type}}</p>
+    <img ng-src="https://image.tmdb.org/t/p/w500/{{search.poster_path}}" ng-if="search.poster_path != null" />
+    <img ng-src="http://www.locksmithtoolandsupply.com/store/graphics/00000002/No_available_image.jpg" ng-if="search.poster_path == null" 'height: 610px'/>
+        <!-- angular collapse -->
+        <a ng-model="collapsed" ng-click="collapsed=!collapsed"><strong>Overview</strong></a>
+        <div ng-show="collapsed">{{search.overview}}</div>
+        <!-- angular collapse end -->
 
-    <!-- angular collapse -->
-    <a ng-model="collapsed" ng-click="collapsed=!collapsed"><strong>Overview</strong></a>
-    <div ng-show="collapsed">{{search.overview}}</div>
-    <!-- angular collapse end -->
-    <!-- must watch controller start -->
-    <div ng-controller="MustwatchController as mw">
-      <!-- must watch button -->
-      <li><a ng-click='mw.postAllMustWatch(search.title, search.name, search.release_date, search.first_air_date, search.media_type, search.overview)'><i class="icon-fixed-width fa fa-heart-o"></i></a></li>
+        <!-- must watch controller start -->
+        <div ng-controller="MustwatchController as mw">
+          <!-- must watch button -->
+          <li><a ng-click='mw.postAllMustWatch(search.title, search.name, search.release_date, search.first_air_date, search.media_type, search.overview, search.poster_path)'><i class="icon-fixed-width fa fa-heart-o"></i></a></li>
+        </div>
+        <!-- must watch controller end -->
+
+         <div ng-controller="TrackupcomingController as tu">
+        <!-- upcoming tracker button -->
+        <li><a ng-click='tu.postAllUpcoming(search.title, search.name, search.release_date, search.first_air_date, search.media_type, search.overview, search.poster_path)'><i class="icon-fixed-width fa fa-globe"></i></a></li>
+      </div>
     </div>
-    <!-- must watch controller end -->
-
-     <div ng-controller="TrackupcomingController as tu">
-    <!-- upcoming tracker button -->
-    <li><a ng-click='tu.postAllUpcoming(search.title, search.name, search.release_date, search.first_air_date, search.media_type, search.overview)'><i class="icon-fixed-width fa fa-globe"></i></a></li>
-  </div>
+    </div>
 </div>

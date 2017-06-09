@@ -1,22 +1,32 @@
 <!-- must watch service -->
 <ul class="list-group">
-<li class="active"><a href="/userHome"><i class="icon-fixed-width fa fa-search"></i> Search here</a></li>
-<li><a href="/trackupcoming"><i class="icon-fixed-width fa fa-globe"></i> Track upcoming</a></li>
+  <li class="active"><a href="/userHome"><i class="icon-fixed-width fa fa-search"></i> Search here</a></li>
+  <li><a href="/trackupcoming"><i class="icon-fixed-width fa fa-globe"></i> Track upcoming</a></li>
 </ul>
-<div class="container">
-    <div ng-controller="MustwatchController as mw" ng-init="mw.getAllMustWatch()">
-      <div ng-repeat="search in mw.watchList" class="col-sm-2">
-        <div class="row">
-          <h4>Title: {{search.title}}</h4>
-          <h4> {{search.name}}</h4>
-          <h5>Release Date:</h5>
-          <p>{{search.release_date}}{{search.first_air_date}}</p>
-          <p>{{search.media_type}}</p>
+<div class="sandbox sandbox-correct-pronounciation">
+  <h1 class="heading heading-correct-pronounciation">
+    Your
+    <em>Must watch</em>
+   List
+  </h1>
+</div>
+    <div class="row">
+      <div ng-controller="MustwatchController as mw" ng-init="mw.getAllMustWatch()">
+      <div ng-repeat="search in mw.watchList" class="col-md-3 divsize">
+        <div>
+        <h4> {{search.title}}</h4>
+        <h4> {{search.name}}</h4>
+        <h5>Release Date:</h5><p>{{search.release_date}}{{search.first_air_date}}</p>
+        <p>{{search.media_type}}</p>
+        <img ng-src="https://image.tmdb.org/t/p/w500/{{search.poster_path}}" ng-if="search.poster_path != null" />
+        <img ng-src="http://www.locksmithtoolandsupply.com/store/graphics/00000002/No_available_image.jpg" ng-if="search.poster_path == null" 'height: 610px'/>
           <!-- angular collapse -->
           <a ng-model="collapsed" ng-click="collapsed=!collapsed"><strong>Overview</strong></a>
           <div ng-show="collapsed">{{search.overview}}</div>
           <!-- angular collapse end -->
+          <li><a ng-click='mw.deleteAllMustWatch(search._id)'><i class="icon-fixed-width fa fa-trash-o"></i></a></li>
+
+</div>
+      </div>
     </div>
   </div>
-</div>
-</div>

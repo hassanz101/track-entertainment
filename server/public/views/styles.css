@@ -7,20 +7,24 @@ color:white;
   text-align: center;
   color:white;
 }
-
+.divsize{
+height: 610px;
+}
 /*.box {
   height:510px;
     padding: 5px 7% 0;
     text-align: center;
     position: relative;
     background: rgb(141, 66, 57);
+}*/
+h1{
+  font-family: 'Patrick Hand SC', cursive;
+  color: #fff;
+  text-align: center;
 }
 .row {
-  height: inherit;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  background: rgb(230, 220, 208);
-}*/
+  color: #fff;
+}
 
 .inputText {
     border: 1px solid #ccc;

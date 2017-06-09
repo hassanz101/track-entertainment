@@ -28,5 +28,6 @@ myApp.controller('UserController', function(tmdbservice, mustwatchservice, track
       tmdbservice.getMedia(vm.searchbox).then(function(response){
         vm.mediaList = response;
     }); //end tmdbservice
+    vm.searchbox = '';
   };//end getAllMedia
 });//end UserController

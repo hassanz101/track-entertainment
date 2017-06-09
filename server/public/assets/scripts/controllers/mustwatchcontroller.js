@@ -7,8 +7,9 @@
      vm.userInfo = response.data._id;
    });
 
-   vm.postAllMustWatch = function(title, name, release_date, first_air_date, media_type, overview) {
-     mustwatchservice.postWatch(vm.userInfo, title, name, release_date, first_air_date, media_type, overview).then(function(response) {
+   vm.postAllMustWatch = function(title, name, release_date, first_air_date, media_type, overview, poster_path) {
+     mustwatchservice.postWatch(vm.userInfo, title, name, release_date, first_air_date, media_type, overview, poster_path).then(function(response) {
+       swal("Got it!", "Saved to your must watch list!", "success");
        vm.watchList = response;
      }); //end mustwatchservice
    }; //end postAllMustwatch
@@ -21,4 +22,9 @@
      }); //end mustwatchservice
    }; //end getAllMustWatch
 
+   vm.deleteAllMustWatch = function(id){
+      mustwatchservice.deleteWatch(id).then(function(){
+      vm.getAllMustWatch();  
+      });
+   };
  }); //end controller

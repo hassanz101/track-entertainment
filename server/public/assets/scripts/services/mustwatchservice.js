@@ -16,16 +16,17 @@ myApp.service('mustwatchservice', function($http, $location) {
   // this.getWatch();
 
   //post to add to must watch
-  this.postWatch = function(user_id, title, name, release_date, first_air_date, media_type, overview) {
+  this.postWatch = function(user_id, title, name, release_date, first_air_date, media_type, overview, poster_path) {
     console.log('In POST Mustwatch');
     var entertainToSend = {
-      userid :user_id,
+      userid: user_id,
       title: title,
       name: name,
       release_date: release_date,
       first_air_date: first_air_date,
       media_type: media_type,
-      overview: overview
+      overview: overview,
+      poster_path: poster_path
     }; //end entertainToSend
     console.log('this the Mustwatch List to send', entertainToSend);
     //http POST
@@ -37,4 +38,14 @@ myApp.service('mustwatchservice', function($http, $location) {
       console.log("this is the POST response", response);
     }); //end then
   }; //end postWatch
+
+  this.deleteWatch = function(user_id) {
+   console.log('this is the Upcoming DELETE');
+  return $http({
+     method: 'DELETE',
+     url: '/mustwatch/' + user_id
+   }).then(function(response) {
+     console.log(response);
+   });
+ };
 }); //end mustwatchservice

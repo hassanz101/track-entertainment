@@ -14,7 +14,7 @@ myApp.service('trackupcomingService', function($http, $location) {
   }; //end getUpcoming
 
   //post call to add to trackupcoming
-  this.postUpcoming = function(user_id, title, name, release_date, first_air_date, media_type, overview) {
+  this.postUpcoming = function(user_id, title, name, release_date, first_air_date, media_type, overview, poster_path) {
     console.log('In POST Upcoming');
     var upcomingToSend = {
       userid :user_id,
@@ -23,7 +23,8 @@ myApp.service('trackupcomingService', function($http, $location) {
       release_date: release_date,
       first_air_date: first_air_date,
       media_type: media_type,
-      overview: overview
+      overview: overview,
+      poster_path: poster_path
     }; //end upcomingToSend
     console.log('this is the Upcoming list to send', upcomingToSend);
     return $http({
@@ -34,4 +35,17 @@ myApp.service('trackupcomingService', function($http, $location) {
       console.log('this is the trackupcoming post respon', response);
     }); //end then
   }; //end postUpcoming
+
+  this.deleteUpcoming = function(user_id, title, name, release_date, first_air_date, media_type, overview, poster_path) {
+   console.log('this is the Upcoming DELETE');
+  return $http({
+     method: 'DELETE',
+     url: '/trackupcoming',
+     params: { userid :user_id }
+   }).then(function(response) {
+     console.log(response);
+     return response;
+   });
+ };
+ this.getUpcoming();
 }); //end trackupcoming service

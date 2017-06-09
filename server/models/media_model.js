@@ -6,10 +6,11 @@ var mediaSchema = new Schema({
     userid: {type: String, required: true},
     title: {type: String},
     name:  {type:String},
-    release_date: {type:Date},
-    first_air_date: {type:Date},
+    release_date: {type:String},
+    first_air_date: {type:String},
     media_type: {type: String, required: true},
-    overview: {type: String, required: true}
+    overview: {type: String, required: true},
+    poster_path: {type: String }
 });
 
 var media = mongoose.model('media', mediaSchema);
