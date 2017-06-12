@@ -10,6 +10,18 @@ color:white;
 .divsize{
 height: 610px;
 }
+
+.movie{
+  border: 3px black solid;
+  padding-bottom:3px;
+}
+.overview{
+
+}
+img{
+  width: 300px;
+  height: 300px;
+}
 /*.box {
   height:510px;
     padding: 5px 7% 0;

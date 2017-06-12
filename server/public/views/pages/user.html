@@ -18,14 +18,14 @@
 </div>
 <div class="row">
   <div ng-repeat="search in uc.mediaList" class="col-md-3 divsize">
-<!-- <div ng-if="$index % 3 ===0" class="row"> -->
-    <div>
-    <h4> {{search.title}}</h4>
-    <h4> {{search.name}}</h4>
-    <h5>Release Date:</h5><p>{{search.release_date}}{{search.first_air_date}}</p>
-    <p>{{search.media_type}}</p>
-    <img ng-src="https://image.tmdb.org/t/p/w500/{{search.poster_path}}" ng-if="search.poster_path != null" />
-    <img ng-src="http://www.locksmithtoolandsupply.com/store/graphics/00000002/No_available_image.jpg" ng-if="search.poster_path == null" 'height: 610px'/>
+  <!-- <div ng-if="$index % 3 ===0" class="row"> -->
+      <div class ="movie">
+      <h4> {{search.title}}</h4>
+      <h4> {{search.name}}</h4>
+      <h5>Release Date:</h5><p>{{search.release_date}}{{search.first_air_date}}</p>
+      <p>{{search.media_type}}</p>
+      <img ng-src="https://image.tmdb.org/t/p/w500/{{search.poster_path}}" ng-if="search.poster_path != null" />
+      <img ng-src="http://www.locksmithtoolandsupply.com/store/graphics/00000002/No_available_image.jpg" ng-if="search.poster_path == null"/>
         <!-- angular collapse -->
         <a ng-model="collapsed" ng-click="collapsed=!collapsed"><strong>Overview</strong></a>
         <div ng-show="collapsed">{{search.overview}}</div>
